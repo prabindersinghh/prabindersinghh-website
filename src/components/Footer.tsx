@@ -19,9 +19,9 @@ export const Footer = () => {
 
           <div className="flex items-center gap-4">
             {[
-              { icon: Github, href: "https://github.com" },
-              { icon: Linkedin, href: "https://linkedin.com" },
-              { icon: Mail, href: "mailto:prabinder@example.com" },
+              { icon: Github, href: "https://github.com/prabindersinghh" },
+              { icon: Linkedin, href: "https://linkedin.com/in/prabindersingh" },
+              { icon: Mail, href: "mailto:prabindersinghh@gmail.com" },
             ].map(({ icon: Icon, href }, index) => (
               <motion.a
                 key={index}

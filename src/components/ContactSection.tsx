@@ -7,20 +7,20 @@ const contactLinks = [
   {
     icon: Mail,
     label: "Email",
-    value: "prabinder@example.com",
-    href: "mailto:prabinder@example.com",
+    value: "prabindersinghh@gmail.com",
+    href: "mailto:prabindersinghh@gmail.com",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/prabinder",
-    href: "https://linkedin.com",
+    value: "linkedin.com/in/prabindersingh",
+    href: "https://linkedin.com/in/prabindersingh",
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "github.com/prabinder",
-    href: "https://github.com",
+    value: "github.com/prabindersinghh",
+    href: "https://github.com/prabindersinghh",
   },
 ];
 
