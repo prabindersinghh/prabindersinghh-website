@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 export const HeroSection = () => {
   return (
@@ -88,7 +89,7 @@ export const HeroSection = () => {
             >
               {[
                 { icon: Github, href: "https://github.com/prabindersinghh", label: "GitHub" },
-                { icon: Linkedin, href: "https://linkedin.com/in/prabindersingh", label: "LinkedIn" },
+                { icon: Linkedin, href: "https://www.linkedin.com/in/prabinder-singh-6856a431a/", label: "LinkedIn" },
                 { icon: Mail, href: "mailto:prabindersinghh@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
@@ -121,9 +122,11 @@ export const HeroSection = () => {
                 transition={{ duration: 0.3 }}
                 style={{ transform: "rotate(3deg)" }}
               >
-                <div className="w-full h-full bg-gradient-to-br from-secondary via-muted to-secondary/80 flex items-center justify-center">
-                  <span className="text-8xl md:text-9xl font-black text-foreground/10">PS</span>
-                </div>
+                <img 
+                  src={profilePhoto} 
+                  alt="Prabinder Singh - AI Engineer"
+                  className="w-full h-full object-cover object-top"
+                />
               </motion.div>
               {/* Decorative elements */}
               <motion.div

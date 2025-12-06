@@ -13,8 +13,8 @@ const contactLinks = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "linkedin.com/in/prabindersingh",
-    href: "https://linkedin.com/in/prabindersingh",
+    value: "Prabinder Singh",
+    href: "https://www.linkedin.com/in/prabinder-singh-6856a431a/",
   },
   {
     icon: Github,
