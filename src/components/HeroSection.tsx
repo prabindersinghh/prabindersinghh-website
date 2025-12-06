@@ -87,9 +87,9 @@ export const HeroSection = () => {
               className="flex items-center gap-4"
             >
               {[
-                { icon: Github, href: "https://github.com", label: "GitHub" },
-                { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-                { icon: Mail, href: "mailto:prabinder@example.com", label: "Email" },
+                { icon: Github, href: "https://github.com/prabindersinghh", label: "GitHub" },
+                { icon: Linkedin, href: "https://linkedin.com/in/prabindersingh", label: "LinkedIn" },
+                { icon: Mail, href: "mailto:prabindersinghh@gmail.com", label: "Email" },
               ].map(({ icon: Icon, href, label }) => (
                 <motion.a
                   key={href}
