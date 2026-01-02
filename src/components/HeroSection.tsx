@@ -45,7 +45,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="flex flex-wrap gap-2 mb-6"
             >
-              {["Business Analyst", "Data Analytics", "SQL", "Excel", "Automation"].map((tag, index) => (
+              {["AI Engineer", "Data Systems", "Agentic AI", "Product Builder"].map((tag, index) => (
                 <span
                   key={tag}
                   className="px-3 py-1 rounded-full border border-border text-sm text-muted-foreground"
@@ -61,7 +61,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8 leading-relaxed"
             >
-              Turning data into pricing, sales, and operational insights.
+              Building multi-modal AI systems, agentic intelligence, and data-driven products that create real-world impact.
             </motion.p>
 
             <motion.div
