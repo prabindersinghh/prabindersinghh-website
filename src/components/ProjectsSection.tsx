@@ -68,6 +68,7 @@ const projects = [
     subtitle: "SaaS Order Management for Garment Manufacturers",
     description: "Full-stack platform on React 18 + TypeScript + Vite + shadcn/ui + Supabase with a Three.js 3D mockup engine, 32 DB migrations, 10-stage production tracking, multi-role system across 4 order types.",
     tags: ["React 18", "Supabase", "Three.js", "SaaS"],
+    live: "https://leorit.xyz",
     color: "from-foreground/5 to-foreground/10",
   },
   {
@@ -204,14 +205,24 @@ export const ProjectsSection = () => {
                 </span>
               ))}
             </div>
-            {selectedProject.github && (
-              <div className="flex gap-4">
-                <Button variant="hero" asChild>
-                  <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" />
-                    View Code
-                  </a>
-                </Button>
+            {(selectedProject.github || selectedProject.live) && (
+              <div className="flex flex-wrap gap-4">
+                {selectedProject.github && (
+                  <Button variant="hero" asChild>
+                    <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
+                      <Github className="mr-2 h-4 w-4" />
+                      View Code
+                    </a>
+                  </Button>
+                )}
+                {selectedProject.live && (
+                  <Button variant="hero-outline" asChild>
+                    <a href={selectedProject.live} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </a>
+                  </Button>
+                )}
               </div>
             )}
           </motion.div>
