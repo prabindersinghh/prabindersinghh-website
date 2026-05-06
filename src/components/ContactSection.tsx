@@ -22,6 +22,18 @@ const contactLinks = [
     value: "github.com/prabindersinghh",
     href: "https://github.com/prabindersinghh",
   },
+  {
+    icon: Mail,
+    label: "Phone",
+    value: "+91 6239712653",
+    href: "tel:+916239712653",
+  },
+  {
+    icon: Mail,
+    label: "Location",
+    value: "Mohali, Punjab, India",
+    href: "#",
+  },
 ];
 
 export const ContactSection = () => {

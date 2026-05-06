@@ -4,10 +4,12 @@ import { useRef } from "react";
 import { Code2, Cpu, Layers, Sparkles } from "lucide-react";
 
 const skills = [
-  "Python", "TypeScript", "React", "Node.js", "TensorFlow", "PyTorch",
-  "LangChain", "RAG Systems", "Vector Databases", "FAISS", "Pinecone",
-  "GPT-4", "Claude", "LLaMA", "Computer Vision", "NLP", "Firebase",
-  "Supabase", "PostgreSQL", "Docker", "AWS", "GCP"
+  "Python", "PyTorch", "HuggingFace", "Vision Transformers", "Wav2Vec2",
+  "LLMs", "RAG", "Agentic AI", "FAISS", "LangChain", "Multi-Modal Learning",
+  "FastAPI", "Microservices", "Kubernetes", "Docker", "OpenTelemetry",
+  "CNCF Ecosystem", "MLflow", "Kubeflow", "Metaflow",
+  "TypeScript", "React 18", "Vite", "shadcn/ui", "Three.js",
+  "Supabase", "PostgreSQL", "AWS", "GCP", "SQL",
 ];
 
 export const AboutSection = () => {
@@ -27,18 +29,14 @@ export const AboutSection = () => {
             About Me
           </h2>
           <p className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-6">
-            I blend AI engineering, data systems, and product execution to build impactful solutions.
+            AI Engineer building multi-modal systems, agentic pipelines, and production ML platforms.
           </p>
           <p className="text-lg text-muted-foreground leading-relaxed">
-            With experience spanning startups and technical leadership, I specialize in creating 
-            multi-modal AI systems, agentic intelligence, and full-stack products. My approach 
-            combines deep technical expertise with a strong product mindset, ensuring every 
-            solution delivers real-world value.
+            B.Tech CSE (Business Systems) at Thapar Institute. Founder of Leorit.ai — an order management OS for garment manufacturers across India. Merged contributor to the CNCF Kubeflow SDK, with active PRs on Headlamp (kubernetes-sigs), MLflow, Metaflow, and OpenMined Syft. I ship research-grade pipelines and scalable AI products end-to-end.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {/* Background Card */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -53,9 +51,9 @@ export const AboutSection = () => {
             </div>
             <ul className="space-y-4">
               {[
-                { icon: Sparkles, text: "Engineering student with a passion for AI/ML" },
-                { icon: Code2, text: "Built production AI systems handling real users" },
-                { icon: Cpu, text: "Experience with startups from 0→1 product launches" },
+                { icon: Sparkles, text: "B.Tech CSE (Business Systems), Thapar Institute · 94.2 percentile JEE Mains" },
+                { icon: Code2, text: "Founder & CEO at Leorit.ai — SaaS OS for garment manufacturers" },
+                { icon: Cpu, text: "Merged PR in CNCF Kubeflow SDK; active OSS across MLflow, Metaflow, Headlamp" },
               ].map((item, index) => (
                 <motion.li
                   key={index}
@@ -71,7 +69,6 @@ export const AboutSection = () => {
             </ul>
           </motion.div>
 
-          {/* Skills Card */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}

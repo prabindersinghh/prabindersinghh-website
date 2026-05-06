@@ -1,49 +1,56 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Briefcase, TrendingUp, Database, BarChart, Users, Megaphone } from "lucide-react";
+import { Briefcase, TrendingUp, Database, BarChart, Users, Megaphone, Rocket } from "lucide-react";
 
 const experiences = [
   {
+    icon: Rocket,
+    company: "Leorit.ai",
+    role: "Founder & CEO",
+    period: "May 2025 – Present",
+    description: "Architected Leorit Manufacturer OS — SaaS order management for garment manufacturers in Ludhiana, Tirupur & Ahmedabad. Built on React 18 + TypeScript + Vite + shadcn/ui + Supabase with a Three.js 3D mockup engine, 32 DB migrations, 10-stage production tracking, and a multi-role system across Buyer/Manufacturer/Admin.",
+  },
+  {
     icon: TrendingUp,
-    company: "SyntX",
-    role: "Product & Growth Strategist",
-    period: "2024",
-    description: "Led product strategy and growth initiatives for AI-focused startup.",
+    company: "SyntX by OrangeCat",
+    role: "Product & Growth Strategist (Part-Time)",
+    period: "Sep – Oct 2025",
+    description: "Built automated tracking systems with Google Sheets + n8n for conversion optimization. Aligned user behavior data with feature development.",
   },
   {
     icon: Database,
     company: "RemoteStar",
-    role: "Automation & Data Intern",
-    period: "2024",
-    description: "Built automation workflows and data pipelines for remote work solutions.",
+    role: "Business Development & Data Systems Intern",
+    period: "Jul – Sep 2025",
+    description: "Built automation workflows enabling one-click prospect calling — reduced manual work by 70%. Analyzed engagement data for high-conversion patterns.",
   },
   {
     icon: BarChart,
-    company: "Metvy",
-    role: "BD + Insight Intern",
-    period: "2023",
-    description: "Drove business development and market insights for networking platform.",
+    company: "Metvy Pvt Ltd",
+    role: "Business Development Intern",
+    period: "Jun – Jul 2025",
+    description: "Led a team of 3 for targeted outreach. Built data insight models to improve lead quality and client engagement.",
   },
   {
     icon: Megaphone,
-    company: "Glyptika",
-    role: "Marketing Strategist",
-    period: "2023",
-    description: "Developed marketing strategies for creative technology company.",
-  },
-  {
-    icon: Briefcase,
-    company: "Leorit India",
-    role: "B2B Growth + Analytics",
-    period: "2023",
-    description: "Led B2B growth initiatives and pricing analytics, achieving 2000+ sales.",
+    company: "Glyptika Studios LLP",
+    role: "Marketing Executive",
+    period: "Jan – Apr 2025",
+    description: "Designed branding strategies, ran market research, and applied insights to product positioning and campaigns.",
   },
   {
     icon: Users,
     company: "Thapar University Clubs",
-    role: "Comms + Growth",
-    period: "2022-Present",
-    description: "Leadership roles in multiple technical and entrepreneurship clubs.",
+    role: "Marketing & Communication Specialist",
+    period: "2024 – Present",
+    description: "Led PR, outreach, and communications for TEDx, Virsa, and SAR. Supported event planning with data-backed decisions.",
+  },
+  {
+    icon: Briefcase,
+    company: "CollabSphere",
+    role: "Founder",
+    period: "2024",
+    description: "Built a 72-member ecosystem; ₹90,000 in projects secured in week one.",
   },
 ];
 
@@ -77,12 +84,10 @@ export const ExperienceSection = () => {
               transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
               className="relative pl-8 pb-12 last:pb-0"
             >
-              {/* Timeline line */}
               {index !== experiences.length - 1 && (
                 <div className="absolute left-[15px] top-12 bottom-0 w-px bg-border" />
               )}
-              
-              {/* Timeline dot */}
+
               <div className="absolute left-0 top-0 w-8 h-8 rounded-full bg-card border-2 border-foreground flex items-center justify-center">
                 <exp.icon className="h-4 w-4 text-foreground" />
               </div>
