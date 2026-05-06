@@ -6,12 +6,10 @@ import profilePhoto from "@/assets/profile-photo.jpg";
 export const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center grid-background overflow-hidden">
-      {/* Subtle gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/50 pointer-events-none" />
-      
+
       <div className="container mx-auto px-6 py-20 md:py-32">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text Content */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -25,7 +23,7 @@ export const HeroSection = () => {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm font-medium mb-6"
             >
               <span className="w-2 h-2 rounded-full bg-foreground animate-pulse-subtle" />
-              Open to opportunities
+              Founder · CNCF Open Source Contributor
             </motion.div>
 
             <motion.h1
@@ -45,7 +43,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="flex flex-wrap gap-2 mb-6"
             >
-              {["AI Engineer", "Data Systems", "Agentic AI", "Product Builder"].map((tag, index) => (
+              {["AI Engineer", "Multi-Modal AI", "Agentic AI", "ML Systems", "Founder @ Leorit.ai"].map((tag) => (
                 <span
                   key={tag}
                   className="px-3 py-1 rounded-full border border-border text-sm text-muted-foreground"
@@ -61,7 +59,7 @@ export const HeroSection = () => {
               transition={{ delay: 0.6, duration: 0.6 }}
               className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8 leading-relaxed"
             >
-              Building multi-modal AI systems, agentic intelligence, and data-driven products that create real-world impact.
+              Building multi-modal AI, agentic systems, and production ML platforms. Merged contributor to CNCF Kubeflow SDK and active across MLflow, Headlamp, Metaflow & OpenMined.
             </motion.p>
 
             <motion.div
@@ -70,15 +68,15 @@ export const HeroSection = () => {
               transition={{ delay: 0.7, duration: 0.6 }}
               className="flex flex-wrap gap-4 mb-8"
             >
-            <Button variant="hero" size="lg" asChild>
-              <a href="#projects">
-                Explore My Work
-                <ArrowDown className="ml-2 h-4 w-4" />
-              </a>
-            </Button>
-            <Button variant="hero-outline" size="lg" asChild>
-              <a href="#contact">Let's Connect</a>
-            </Button>
+              <Button variant="hero" size="lg" asChild>
+                <a href="#projects">
+                  Explore My Work
+                  <ArrowDown className="ml-2 h-4 w-4" />
+                </a>
+              </Button>
+              <Button variant="hero-outline" size="lg" asChild>
+                <a href="#contact">Let's Connect</a>
+              </Button>
             </motion.div>
 
             <motion.div
@@ -108,7 +106,6 @@ export const HeroSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: -5 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -122,13 +119,12 @@ export const HeroSection = () => {
                 transition={{ duration: 0.3 }}
                 style={{ transform: "rotate(3deg)" }}
               >
-                <img 
-                  src={profilePhoto} 
+                <img
+                  src={profilePhoto}
                   alt="Prabinder Singh - AI Engineer"
                   className="w-full h-full object-cover object-top"
                 />
               </motion.div>
-              {/* Decorative elements */}
               <motion.div
                 className="absolute -bottom-4 -right-4 w-20 h-20 md:w-24 md:h-24 rounded-2xl bg-foreground z-10"
                 initial={{ opacity: 0, scale: 0 }}
@@ -146,7 +142,6 @@ export const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

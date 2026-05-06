@@ -1,49 +1,67 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
-import { Trophy, Award, Star, Medal, FileText, Cloud, GraduationCap } from "lucide-react";
+import { Trophy, Award, Star, Medal, FileText, Cloud, GraduationCap, Shield } from "lucide-react";
 
 const achievements = [
   {
     icon: Trophy,
-    title: "3rd Place",
-    subtitle: "Agentic AI Hackathon",
-    description: "University of Ulster, UK",
+    title: "3rd Place + Innovation Award",
+    subtitle: "AI for Sustainability Hackathon 2026",
+    description: "Canadian University Dubai · CIVITAS-INTEL",
+  },
+  {
+    icon: Shield,
+    title: "Top 12 National Finalist",
+    subtitle: "Secure Bharat: AI & Cybersecurity Summit 2026",
+    description: "ISB Mohali · Punjab Police × CyberPeace Foundation",
   },
   {
     icon: Medal,
     title: "3rd Place",
     subtitle: "BIOS Hackathon 2025",
-    description: "TruthShield Project",
+    description: "IEEE × CSED Thapar · TruthShield Pro",
+  },
+  {
+    icon: Trophy,
+    title: "3rd Place",
+    subtitle: "Agentic AI Hackathon 2025",
+    description: "University of Ulster, UK · CyberSentinel",
   },
   {
     icon: Star,
     title: "Finalist",
-    subtitle: "Indo–Israel Hackathon",
-    description: "International Competition",
+    subtitle: "PNB Cybersecurity Hackathon 2026",
+    description: "Live Jury VC Session · QuantumSight",
   },
   {
-    icon: Award,
-    title: "Selected Project",
-    subtitle: "EY Techathon 6.0",
-    description: "ProcurenAI",
+    icon: Star,
+    title: "Finalist",
+    subtitle: "Indo–Israel Intl Hackathon 2025",
+    description: "MediFlow Vita",
   },
   {
     icon: FileText,
     title: "Research Paper",
     subtitle: "RAG-ST",
-    description: "Under review (IEEE)",
+    description: "Under review · IEEE ICAIB 2025",
   },
   {
     icon: Cloud,
     title: "Ambassador",
-    subtitle: "Google Cloud",
-    description: "Student Ambassador",
+    subtitle: "Google Gemini Student Ambassador",
+    description: "Cloud adoption & dev workshops",
+  },
+  {
+    icon: Award,
+    title: "Merged PR",
+    subtitle: "CNCF Kubeflow SDK #402",
+    description: "polling_interval validation across 3 backends",
   },
   {
     icon: GraduationCap,
-    title: "Learner",
-    subtitle: "McKinsey Forward",
-    description: "Leadership Program",
+    title: "Global Cohort",
+    subtitle: "McKinsey Forward Program",
+    description: "Leadership & digital transformation",
   },
 ];
 
@@ -57,7 +75,7 @@ const AnimatedCounter = ({ value, suffix = "" }: { value: number; suffix?: strin
       let start = 0;
       const duration = 2000;
       const increment = value / (duration / 16);
-      
+
       const timer = setInterval(() => {
         start += increment;
         if (start >= value) {
@@ -100,7 +118,6 @@ export const AchievementsSection = () => {
           </p>
         </motion.div>
 
-        {/* Stats */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -108,9 +125,9 @@ export const AchievementsSection = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16"
         >
           {[
-            { value: 7, suffix: "+", label: "Hackathons" },
-            { value: 3, suffix: "", label: "Awards Won" },
-            { value: 5, suffix: "+", label: "AI Projects" },
+            { value: 8, suffix: "+", label: "Hackathons" },
+            { value: 4, suffix: "", label: "Podium / Awards" },
+            { value: 5, suffix: "+", label: "OSS Projects" },
             { value: 1, suffix: "", label: "Research Paper" },
           ].map((stat, index) => (
             <div
@@ -125,14 +142,13 @@ export const AchievementsSection = () => {
           ))}
         </motion.div>
 
-        {/* Achievement Cards */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {achievements.map((achievement, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.3 + index * 0.08 }}
               whileHover={{ y: -5, scale: 1.02 }}
               className="bg-card border border-border rounded-2xl p-6 card-shadow hover:card-shadow-hover transition-all duration-300"
             >

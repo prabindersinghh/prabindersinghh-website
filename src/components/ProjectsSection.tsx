@@ -1,63 +1,97 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { ExternalLink, Github, X, Shield, Brain, ShoppingBag, FileText, Heart, Sparkles, Shirt } from "lucide-react";
+import { ExternalLink, Github, X, Shield, Brain, FileText, Heart, Sparkles, Activity, Building2, FlaskConical, Boxes, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const projects = [
   {
+    icon: Boxes,
+    title: "Kubeflow OTel PoC",
+    subtitle: "OpenTelemetry SDK Instrumentation",
+    description: "Working PoC with centralized telemetry.py, per-iteration child spans, and verified OTel JSON output. Pre-work for GSoC 2026 Project #7 with the CNCF Kubeflow community.",
+    tags: ["OpenTelemetry", "Kubeflow", "CNCF", "Python", "Observability"],
+    github: "https://github.com/prabindersinghh/kubeflow-otel-poc",
+    color: "from-foreground/5 to-foreground/10",
+  },
+  {
+    icon: Lock,
+    title: "opensec-intelligence",
+    subtitle: "Agentic Security Analysis Pipeline",
+    description: "Published npm package v3.0.1 in TypeScript. Four-agent sequential pipeline — Scanner → Analyst → Consensus → Fixer — running locally via Ollama with optional cloud hybrid mode.",
+    tags: ["Agentic AI", "TypeScript", "Ollama", "Security", "npm"],
+    github: "https://github.com/prabindersinghh/opensec-intelligence",
+    color: "from-foreground/5 to-foreground/10",
+  },
+  {
     icon: Shield,
     title: "TruthShield Pro",
     subtitle: "Multi-Modal AI Forensics Engine",
-    description: "Advanced deepfake detection system using ViT for images, Wav2Vec2 for audio, LLaMA for text analysis, and FAISS for vector similarity search.",
-    tags: ["ViT", "Wav2Vec2", "LLaMA", "FAISS", "PyTorch"],
+    description: "ViT visual forensics, Wav2Vec2 + ECAPA-TDNN voice clone detection, LLaMA3 text forensics, and diffusion artifact fingerprinting. Cross-Modal Consistency Engine + FAISS provenance graphs with explainability.",
+    tags: ["ViT", "Wav2Vec2", "LLaMA3", "FAISS", "Multi-Modal"],
     color: "from-foreground/5 to-foreground/10",
   },
   {
     icon: Brain,
     title: "CyberSentinel",
-    subtitle: "Hybrid Agentic IDS",
-    description: "Intelligent intrusion detection system achieving <2s MITM detection with UEBA analysis and multi-agent threat response.",
-    tags: ["Agentic AI", "UEBA", "Security", "Real-time"],
+    subtitle: "Hybrid Agentic Intrusion Detection",
+    description: "Hybrid IDS combining rules + ML anomaly detection (92%+ accuracy), NLP phishing engine, and UEBA drift analysis. Raspberry Pi edge gateway with sub-2s IoT/Wi-Fi threat blocking.",
+    tags: ["Agentic AI", "UEBA", "Edge ML", "IDS"],
     color: "from-foreground/5 to-foreground/10",
   },
   {
-    icon: ShoppingBag,
-    title: "Leorit Bulk AI",
-    subtitle: "B2B Apparel Automation",
-    description: "AI-powered B2B platform for bulk apparel orders with intelligent pricing, inventory management, and 2000+ sales executed.",
-    tags: ["AI Automation", "E-commerce", "B2B", "Analytics"],
+    icon: Lock,
+    title: "QuantumSight",
+    subtitle: "AI-Augmented Cryptographic Intelligence",
+    description: "HNDL quantum threat defense: CBOM generation, 0–1000 Cyber Rating, Gemini 2.5 Flash AI migration plans. FastAPI + React 18 + Docker. Live jury VC session at PNB Cybersecurity Hackathon.",
+    tags: ["FastAPI", "Gemini 2.5", "PQC", "Docker"],
+    color: "from-foreground/5 to-foreground/10",
+  },
+  {
+    icon: Building2,
+    title: "CIVITAS-INTEL",
+    subtitle: "Urban Decision Intelligence Engine",
+    description: "Distributed multi-agent platform for AI-driven city management. 3rd Place + Innovation Award at AI for Sustainability Hackathon, Canadian University Dubai.",
+    tags: ["Multi-Agent", "Urban AI", "Distributed Systems"],
+    color: "from-foreground/5 to-foreground/10",
+  },
+  {
+    icon: FlaskConical,
+    title: "RAG-ST",
+    subtitle: "Retrieval-Augmented DL for Spatial Transcriptomics",
+    description: "9-stage pipeline: EfficientNet + FAISS patch retrieval + MLP gene expression prediction with PCA / t-SNE / UMAP interpretability. Paper under review at IEEE ICAIB 2025.",
+    tags: ["RAG", "EfficientNet", "FAISS", "Bioinformatics", "Research"],
+    color: "from-foreground/5 to-foreground/10",
+  },
+  {
+    icon: Activity,
+    title: "Leorit Manufacturer OS",
+    subtitle: "SaaS Order Management for Garment Manufacturers",
+    description: "Full-stack platform on React 18 + TypeScript + Vite + shadcn/ui + Supabase with a Three.js 3D mockup engine, 32 DB migrations, 10-stage production tracking, multi-role system across 4 order types.",
+    tags: ["React 18", "Supabase", "Three.js", "SaaS"],
     color: "from-foreground/5 to-foreground/10",
   },
   {
     icon: FileText,
     title: "ProcurenAI",
     subtitle: "Multi-Agent RFP Automation",
-    description: "Intelligent RFP processing system with multi-agent architecture for automated proposal analysis and vendor matching.",
-    tags: ["Multi-Agent", "NLP", "Automation", "LangChain"],
+    description: "Multi-agent RFP processing platform for automated proposal analysis and vendor matching. Finalist at Vibestate / ByteWars 2025, Derby UK.",
+    tags: ["Multi-Agent", "NLP", "LangChain", "Automation"],
     color: "from-foreground/5 to-foreground/10",
   },
   {
     icon: Heart,
     title: "MediFlow Vita",
     subtitle: "Connected Healthcare AI",
-    description: "Healthcare platform integrating AI for patient monitoring, predictive diagnostics, and care coordination. Hackathon finalist.",
+    description: "Healthcare platform integrating AI for patient monitoring, predictive diagnostics, and care coordination. Finalist at Indo–Israel International Hackathon 2025.",
     tags: ["Healthcare", "ML", "IoT", "Prediction"],
     color: "from-foreground/5 to-foreground/10",
   },
   {
     icon: Sparkles,
-    title: "SkillSpark",
-    subtitle: "Career Identity OS",
-    description: "Full-stack career development platform with personalized learning paths, skill tracking, and AI-powered recommendations.",
-    tags: ["React", "Firebase", "AI", "Full-Stack"],
-    color: "from-foreground/5 to-foreground/10",
-  },
-  {
-    icon: Shirt,
-    title: "NEEDLE",
-    subtitle: "Gen Z Fashion AI",
-    description: "AI-powered fashion personalization platform with virtual try-on prototype for Gen Z consumers.",
-    tags: ["Computer Vision", "Personalization", "AR", "Fashion"],
+    title: "FairHire360",
+    subtitle: "Bias-Aware Hiring Intelligence",
+    description: "AI-driven hiring intelligence platform addressing bias and fairness in recruitment workflows. Finalist at Sabka AI 2026, TIET-UQ.",
+    tags: ["Fairness", "ML", "HR Tech"],
     color: "from-foreground/5 to-foreground/10",
   },
 ];
@@ -90,7 +124,7 @@ export const ProjectsSection = () => {
               key={index}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.1 + index * 0.08 }}
               whileHover={{ y: -8 }}
               onClick={() => setSelectedProject(project)}
               className="group cursor-pointer bg-card border border-border rounded-2xl p-6 card-shadow hover:card-shadow-hover transition-all duration-300"
@@ -130,7 +164,6 @@ export const ProjectsSection = () => {
         </div>
       </div>
 
-      {/* Project Modal */}
       {selectedProject && (
         <motion.div
           initial={{ opacity: 0 }}
@@ -153,6 +186,7 @@ export const ProjectsSection = () => {
               <button
                 onClick={() => setSelectedProject(null)}
                 className="p-2 rounded-full hover:bg-secondary transition-colors"
+                aria-label="Close"
               >
                 <X className="h-6 w-6 text-muted-foreground" />
               </button>
@@ -170,16 +204,16 @@ export const ProjectsSection = () => {
                 </span>
               ))}
             </div>
-            <div className="flex gap-4">
-              <Button variant="hero">
-                <Github className="mr-2 h-4 w-4" />
-                View Code
-              </Button>
-              <Button variant="hero-outline">
-                <ExternalLink className="mr-2 h-4 w-4" />
-                Live Demo
-              </Button>
-            </div>
+            {selectedProject.github && (
+              <div className="flex gap-4">
+                <Button variant="hero" asChild>
+                  <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="mr-2 h-4 w-4" />
+                    View Code
+                  </a>
+                </Button>
+              </div>
+            )}
           </motion.div>
         </motion.div>
       )}
